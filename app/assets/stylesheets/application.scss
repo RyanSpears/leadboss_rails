@@ -1,0 +1,21 @@
+@import "materialize/components/color-variables";
+$primary-color: color("blue", "lighten-2") !default;
+$secondary-color: color("yellow", "base") !default;
+@import "materialize";
+
+.alert {
+    border-radius: 5px;
+    padding: 0.75em;
+
+    .alert-success {
+        color: #155724;
+        background-color: #c3e6cb;
+        border: #155724 2px solid;
+    }
+
+    .alert-danger {
+        color: #721c24;
+        background-color: #f8d7da;
+        border: #721c24 2px solid;
+    }
+}

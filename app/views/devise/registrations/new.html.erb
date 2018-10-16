@@ -1,0 +1,33 @@
+<div class="row">
+  <h2>Sign up</h2>
+</div>
+
+<div class="row">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="input-field col s12">
+      <%= f.label :email, :for => 'user_email' %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "active validate", :id => 'user_email'  %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.label :password, :for => 'user_password' %>
+      <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off", :class => "validate", :id => 'user_password' %>
+    </div>
+
+    <div class="input-field col s12">
+      <%= f.label :password_confirmation, :for => 'user_confirm_password' %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", :class => 'user_confirm_password' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Sign up", :class => "waves-effect waves-light btn" %>
+    </div>
+  <% end %>
+</div>
+
+<%= render "devise/shared/links" %>
